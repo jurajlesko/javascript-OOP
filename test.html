@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+  
+    Name: <input type="text" id="inp1" /><br>
+    Age: <input type="text" id="inp2" /><br>
+    <button id="btn">Introduction</button>
+    <br>
+    <p id="demo"></p>
+    
+    <script>
+    
+      function Person(name, age) {
+          this.name = name;
+          this.age = age;
+          this.intro = function() {
+            document.getElementById("demo").innerHTML = "Hello, I am " + this.name + " and I am " + this.age + " years old"; 
+          }
+      }
+      
+      document.getElementById("btn").onclick = function() {
+      
+        var myName = document.getElementById("inp1").value;
+        var myAge = document.getElementById("inp2").value;
+        
+        var someone = new Person(myName, myAge);
+        someone.intro();   
+      
+      }
+    
+    </script>
+  
+  </body>
+</html>
