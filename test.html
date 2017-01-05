@@ -2,13 +2,22 @@
 <html>
   <head>
     <title>Test</title>
+	
+	<style>
+	
+		body {
+			line-height: 1.6;
+		}
+	
+	</style>
+	
   </head>
   <body>
   
-    <span>Name:</span><input type="text" id="inp1" /><br>
-    <span>Age: </span><input type="number" id="inp2" /><br>
+    <span>Name:&nbsp;</span><input type="text" id="inp1" /><br />
+    <span>Age:&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="number" id="inp2" /><br />
     <button id="btn">My Introduction</button>
-    <br>
+    <br />
     <p id="demo"></p>
     
     <script>
@@ -26,8 +35,24 @@
         var myName = document.getElementById("inp1").value;
         var myAge = document.getElementById("inp2").value;
         
-        var someone = new Person(myName, myAge);
-        someone.intro();   
+        if (myName == "" && myAge =="") {
+
+          alert("Please enter values for name and age");
+
+        } else if (myName == "") {
+
+          alert("Please enter value for name");
+
+        } else if (myAge == "") {
+
+          alert("Please enter value for age");	
+
+        } else {
+
+          var someone = new Person(myName, myAge);
+          someone.intro(); 
+
+        }  
       
       }
     
