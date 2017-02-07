@@ -8,8 +8,16 @@
     <style>
 
 	body {
-	    line-height: 1.8;
 	    font-family: helvetica;
+	}
+
+	.container {
+		width: 400px;
+	}
+	    
+	.container input {
+		width: 100%;
+		clear: both;
 	}
 
     </style>
@@ -18,49 +26,54 @@
 	
   <body>		  
   
-    <span>Name:&nbsp;</span><input type="text" id="inp1" /><br />
-    <span>Age:&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="number" id="inp2" /><br />
-    <button id="btn">My Introduction</button>
-    <br />
-    <p id="demo"></p>
+	  <div class="container">
+
+	    <label>Name:</label><input type="text" id="inp1" /><br />	  
+	    <label>Age:</label><input type="number" id="inp2" /><br />
+
+	    <button id="btn">My Introduction</button>
+
+	  </div>
+
+	  <p id="demo"></p>
     
-    <script>
-    
-      function Person(name, age) {
-          this.name = name;
-          this.age = age;
-          this.intro = function() {
-            document.getElementById("demo").innerHTML = "Hello, my name is " + this.name + " and I am " + this.age + " years old"; 
-          }
-      }
-      
-      document.getElementById("btn").onclick = function() {
-      
-        var myName = document.getElementById("inp1").value;
-        var myAge = document.getElementById("inp2").value;
-        
-        if (myName == "" && myAge =="") {
+	<script>
 
-          alert("Please enter values for name and age");
+	function Person(name, age) {
+	  this.name = name;
+	  this.age = age;
+	  this.intro = function() {
+	    document.getElementById("demo").innerHTML = "Hello, my name is " + this.name + " and I am " + this.age + " years old"; 
+	  }
+	}
 
-        } else if (myName == "") {
+	document.getElementById("btn").onclick = function() {
 
-          alert("Please enter value for name");
+	var myName = document.getElementById("inp1").value;
+	var myAge = document.getElementById("inp2").value;
 
-        } else if (myAge == "") {
+	if (myName == "" && myAge =="") {
 
-          alert("Please enter value for age");	
+	  alert("Please enter values for name and age");
 
-        } else {
+	} else if (myName == "") {
 
-          var someone = new Person(myName, myAge);
-          someone.intro(); 
+	  alert("Please enter value for name");
 
-        }  
-      
-      }
-    
-    </script>
+	} else if (myAge == "") {
+
+	  alert("Please enter value for age");	
+
+	} else {
+
+	  var someone = new Person(myName, myAge);
+	  someone.intro(); 
+
+	}  
+
+	}
+
+	</script>
   
   </body>
 </html>
